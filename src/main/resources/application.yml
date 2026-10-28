@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: revenue-recognition-system
+  profiles:
+    active: dev # Default to 'dev' (H2 in-memory) for immediate plug-and-play testing; switch to 'prod' for PostgreSQL
+  jpa:
+    open-in-view: false
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: method
+    display-request-duration: true
+
+logging:
+  level:
+    root: INFO
+    com.accounting.revenuerecognition: DEBUG
+    org.hibernate.SQL: INFO
